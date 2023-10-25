@@ -1,5 +1,5 @@
-import db from "../database/db";
-import { DataType, DataTypes } from "sequelize";
+import db from "../database/db.js";
+import {  DataTypes } from "sequelize";
 
 const blogModel = db.define('nombre de la tabla', {
     title: {type: DataTypes.STRING},
