@@ -1,6 +1,8 @@
 import blogModel from './models/blogModel'
 
 /* Métodos del CRUD */
+
+// Obtener todos los registros
 export const getAllBlogs = async (req, res) => {
   try {
     const blogs = await blogModel.findAll();
@@ -34,6 +36,7 @@ export const createBlog = async (req, res) => {
   }
 }
 
+// Actualizar un registro
 export const updateBlog = async (req, res) => {
   try {
     blogModel.update(req.body, {
@@ -47,6 +50,7 @@ export const updateBlog = async (req, res) => {
   }
 }
 
+// Eliminar un registro
 export const deleteBlog = async (req, res) => {
   try {
     blogModel.destroy({
