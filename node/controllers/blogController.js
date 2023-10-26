@@ -15,10 +15,10 @@ export const getAllBlogs = async (req, res) => {
 // Mostrar un registro
 export const getBlog = async (req, res) => {
   try {
-    const blog = blogModel.findAll({
-      where: {id: req.params.id}
+    const blog = await blogModel.findAll({
+      where: {prueba_id: req.params.id}
     })
-    res.json(blog);
+    res.json(blog[0]);
   } catch (error) {
     res.json({ 'mensaje': error.message });
   }
@@ -39,8 +39,8 @@ export const createBlog = async (req, res) => {
 // Actualizar un registro
 export const updateBlog = async (req, res) => {
   try {
-    blogModel.update(req.body, {
-      where: {id: req.params.id}
+    await blogModel.update(req.body, {
+      where: {prueba_id: req.params.id}
     });
     res.json({
       'mensaje': 'Registro actualizado correctamente'
@@ -53,8 +53,8 @@ export const updateBlog = async (req, res) => {
 // Eliminar un registro
 export const deleteBlog = async (req, res) => {
   try {
-    blogModel.destroy({
-      where: {id: req.params.id}
+    await blogModel.destroy({
+      where: {prueba_id: req.params.id}
     });
     res.json({
       'mensaje': 'Registro eliminado correctamente'
