@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize('nombre de la BD', 'root', 'password',  {
+const db = new Sequelize('pruebaBD', 'root', '',  {
     host: 'localhost',
-     dialect: 'mysql'
+    dialect: 'mysql'
 });
 
 export default db;
