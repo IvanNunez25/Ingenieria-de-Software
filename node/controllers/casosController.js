@@ -39,7 +39,7 @@ export const getAllCasos = async (req, res) => {
         }
       },
       order: [['id', 'ASC']],
-      limit: 20
+      limit: 10000
     })
     res.json(casos);
   } catch (error) {
