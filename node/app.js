@@ -7,7 +7,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/pruebaTabla', blogRoutes);
+//app.use('/pruebaTabla', blogRoutes);
+app.use('/casos', blogRoutes);
 
 try {
   await db.authenticate();
