@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const URI = 'http://localhost:8000/pruebaTabla/';
+const URI = 'http://localhost:8000/casos/';
 
 const ComponenteShowPrueba = () => {
 
@@ -38,21 +38,29 @@ const ComponenteShowPrueba = () => {
           <table className="table">
             <thead className="thead-light">
               <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido Paterno</th>
-                <th scope="col">Apellido Materno</th>
+                <th scope="col">ID</th>
+                <th scope="col">Fecha Defunción</th>
+                <th scope="col">Fecha Registro</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Municipio</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
               { registros.map( registro => (
-                <tr key={registro.prueba_id}>
-                  <td> {registro.prueba_nombre} </td>
-                  <td> {registro.prueba_apellido1} </td>
-                  <td> {registro.prueba_apellido2} </td>
+                <tr key={registro.id}>
+                  <td> {registro.id} </td>
+                  <td> {registro.fecha_defuncion} </td>
+                  <td> {registro.fecha_registro} </td>
+                  <td> {registro.sexo == 1 ? 'H' : 'M'} </td>
+                  <td> {registro.edad} </td>
+                  <td> {registro.estado.nombre_estado} </td>
+                  <td> {registro.municipio_association.nombre_mun} </td>
                   <td> 
-                    { <Link to={`/edit/${registro.prueba_id}`} className='btn btn-info'><i class="fa-regular fa-pen-to-square"></i>Editar</Link>}
-                    <button onClick={ () => deleteBlog(registro.prueba_id)} className='btn btn-danger'><i class="fa-solid fa-delete-left"></i>Delete</button>      
+                    { <Link to={`/edit/${registro.prueba_id}`} className='btn btn-info'><i class="fa-regular fa-pen-to-square"></i> Editar</Link>}
+                    <button onClick={ () => deleteBlog(registro.prueba_id)} className='btn btn-danger'><i class="fa-solid fa-delete-left"></i> Delete</button>      
                   </td>
                 </tr>
               )) }

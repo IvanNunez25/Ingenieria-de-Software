@@ -6,6 +6,7 @@ import ComponenteEditPrueba from './prueba/EditPrueba';
 
 import DatosPage from './graficas/DatosPage';
 import Inicio from './graficas/Inicio';
+import Dashboard from './prueba/Dashboard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
