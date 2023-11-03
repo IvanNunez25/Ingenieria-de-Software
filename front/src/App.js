@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import ComponenteShowPrueba from './prueba/ShowPrueba';
 import ComponenteCreatePrueba from './prueba/CreatePrueba';
 import ComponenteEditPrueba from './prueba/EditPrueba';
@@ -14,11 +14,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <Route path='/' element={<ComponenteShowPrueba />} />
+        | <Route path='/' element={<Dashboard />} />
           <Route path='/create' element={<ComponenteCreatePrueba />} />
-          <Route path='/edit/:id' element={<ComponenteEditPrueba />} /> */}
-          <Route path="/" element={<Inicio />} />
-          <Route path="/datos" element={<DatosPage />} />
+          <Route path='/edit/:id' element={<ComponenteEditPrueba />} />
+          {/* <Route path="/" element={<Inicio />} />
+          <Route path="/datos" element={<DatosPage />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

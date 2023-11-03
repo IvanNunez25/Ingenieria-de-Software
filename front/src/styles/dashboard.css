@@ -7,7 +7,8 @@
 
 .dashboard__menu {
     width: 200px;
-    height: 100vh;
+    height: 100px;
+    background-color: aquamarine;
 }
 
 @media (max-width: 768px) {
@@ -33,9 +34,9 @@
     text-align: left;
 }
 
-.dashboard__window .dashboard__window-titulo h1 {
+/* .dashboard__window .dashboard__window-titulo h1 {
     
-}
+} */
 
 @media (max-width: 480px) {
     .dashboard__window .dashboard__window-titulo h1 {
