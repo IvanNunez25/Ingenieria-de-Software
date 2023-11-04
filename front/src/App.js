@@ -14,7 +14,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-        | <Route path='/' element={<Dashboard />} />
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/show' element={<ComponenteShowPrueba />} />
           <Route path='/create' element={<ComponenteCreatePrueba />} />
           <Route path='/edit/:id' element={<ComponenteEditPrueba />} />
           {/* <Route path="/" element={<Inicio />} />

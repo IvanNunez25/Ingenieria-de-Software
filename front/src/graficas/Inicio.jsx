@@ -46,38 +46,38 @@ const options = {
 
 export default function Inicio() {
   return (
-      <div className="menu-container">
-        <div className="menu">
-          <button className="menu-button-start">Inicio</button>
-          <button className="menu-button">
-            <Link to="/datos"className="link-button">Datos</Link>
-          </button>
-          <button className="menu-button disabled-button">Usuario</button>
-          <button className="menu-button disabled-button">Administración</button>
-          <button className="menu-button disabled-button">Cerrar Sesión</button>
+    <div className="menu-container">
+      <div className="menu">
+        <button className="menu-button-start">Inicio</button>
+        <button className="menu-button">
+          <Link to="/show" className="link-button">Datos</Link>
+        </button>
+        <button className="menu-button disabled-button">Usuario</button>
+        <button className="menu-button disabled-button">Administración</button>
+        <button className="menu-button disabled-button">Cerrar Sesión</button>
+      </div>
+      <div className="content-container">
+        <div className="text-container">
+          <h1 className="header-label">Bienvenido</h1>
+          <h2 className="header-label">Comienza a registrar</h2>
+          <p className="main-label">
+            Accede a tu cuenta y comienza a generar reportes de toda la
+            información que está a tu disposición.
+          </p>
         </div>
-        <div className="content-container">
-          <div className="text-container">
-            <h1 className="header-label">Bienvenido</h1>
-            <h2 className="header-label">Comienza a registrar</h2>
-            <p className="main-label">
-              Accede a tu cuenta y comienza a generar reportes de toda la
-              información que está a tu disposición.
-            </p>
-          </div>
-          <button className="main-button">Empezar</button>
+        <button className="main-button">Empezar</button>
+      </div>
+      <div className="charts-container">
+        <div className="chart">
+          <Chart chartType="ColumnChart" data={data1} options={options} />
         </div>
-        <div className="charts-container">
-          <div className="chart">
-            <Chart chartType="ColumnChart" data={data1} options={options} />
-          </div>
-          <div className="chart">
-            <Chart chartType="ColumnChart" data={data2} options={options} />
-          </div>
-          <div className="chart">
-            <Chart chartType="ColumnChart" data={data3} options={options} />
-          </div>
+        <div className="chart">
+          <Chart chartType="ColumnChart" data={data2} options={options} />
+        </div>
+        <div className="chart">
+          <Chart chartType="ColumnChart" data={data3} options={options} />
         </div>
       </div>
+    </div>
   );
 }

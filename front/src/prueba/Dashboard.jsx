@@ -6,6 +6,7 @@ import '../styles/dashboard.css'
 
 const Dashboard = () => {
 
+  /* datos de prueba ELIMINAR MÁS TARDE */
   const data1 = [
     ["Meses ", "datos1", "datos2"],
     ["Febrero", 200, -200],
@@ -14,7 +15,7 @@ const Dashboard = () => {
     ["Mayo", 300, -200],
     ["Junio", 100, -100],
   ];
-  
+
   const data2 = [
     ["Meses ", "datos1", "datos2"],
     ["Julio", 150, -150],
@@ -23,7 +24,7 @@ const Dashboard = () => {
     ["Octubre", 300, -300],
     ["Noviembre", 200, -200],
   ];
-  
+
   const data3 = [
     ["Meses ", "datos1", "datos2"],
     ["Diciembre", 250, -250],
@@ -32,7 +33,7 @@ const Dashboard = () => {
     ["Marzo", 350, -350],
     ["Abril", 200, -200],
   ];
-  
+
   const options = {
     legend: { position: "in" },
     isStacked: true,
@@ -46,20 +47,25 @@ const Dashboard = () => {
       },
     },
   };
-  
+
 
   return (
     <div className="dashboard">
+
       <div className="dashboard__menu">
         <Menu />
       </div>
+
       <div className="dashboard__window">
+
         <div className="dashboard__window-titulo">
           <h1>Bienvenido</h1>
           <div className="dashboard__window-mensaje">
             <p className="titulo">Comienza a registrar</p>
-            <p className="descripcion">Accede a tu cuenta y comienza a generar reportes de toda la información que está a tu disposición</p>
-            <button className="boton">Empezar</button>
+            <div className="area_descripcion">
+              <p className="descripcion">Accede a tu cuenta y comienza a generar reportes de toda la información que está a tu disposición</p>
+              <Link to="/show"><button>Empezar</button></Link>
+            </div>
           </div>
         </div>
 
