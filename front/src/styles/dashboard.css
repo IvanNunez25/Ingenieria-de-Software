@@ -60,3 +60,11 @@
     color: black;
     transition: all 0.2s ease-in-out;
 }
+
+.tabla__registros {
+    padding: 20px;
+}
+
+.tabla__registros_boton {
+    margin-left: 10px;
+}

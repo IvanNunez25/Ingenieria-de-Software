@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MDBDataTable } from 'mdbreact';
+import Menu from './Menu';
+import '../styles/dashboard.css'
 
 const URI = 'http://localhost:8000/casos/';
 
@@ -45,7 +47,7 @@ const ComponenteShowPrueba = () => {
           <Link to={`/edit/${reg.prueba_id}`} className='btn btn-info'>
             <i className="fa-regular fa-pen-to-square"></i> Editar
           </Link>
-          <button onClick={() => deleteBlog(reg.prueba_id)} className='btn btn-danger'>
+          <button onClick={() => deleteBlog(reg.prueba_id)} className='btn btn-danger tabla__registros_boton'>
             <i className="fa-solid fa-delete-left"></i> Delete
           </button>
         </div>
@@ -108,11 +110,14 @@ const ComponenteShowPrueba = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='dashboard tabla__registros'>
+      <div>
+        <Menu />
+      </div>
       <div className='row'>
         <div className='col'>
 
-          <Link to='/create' className='btn btn-primary mt-2 mb-2'><i class="fa-regular fa-square-plus"></i></Link>
+          <Link to='/create' className='btn btn-primary mt-2 mb-2'><i class="fa-regular fa-square-plus"></i> Agregar nuevo registro</Link>
 
           {console.log(data)}
           <MDBDataTable
@@ -121,38 +126,6 @@ const ComponenteShowPrueba = () => {
             small
             data={data}
           />
-
-          {/* <table id="dtBasicExample" className="table table-striped table-bordered table-sm">
-            <thead className="thead-light">
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Fecha Defunción</th>
-                <th scope="col">Fecha Registro</th>
-                <th scope="col">Sexo</th>
-                <th scope="col">Edad</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Municipio</th>
-                <th scope="col">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {registros.map(registro => (
-                <tr key={registro.id}>
-                  <td> {registro.id} </td>
-                  <td> {registro.fecha_defuncion} </td>
-                  <td> {registro.fecha_registro} </td>
-                  <td> {registro.sexo == 1 ? 'H' : 'M'} </td>
-                  <td> {registro.edad} </td>
-                  <td> {registro.estado.nombre_estado} </td>
-                  <td> {registro.municipio_association.nombre_mun} </td>
-                  <td>
-                    {<Link to={`/edit/${registro.prueba_id}`} className='btn btn-info'><i class="fa-regular fa-pen-to-square"></i> Editar</Link>}
-                    <button onClick={() => deleteBlog(registro.prueba_id)} className='btn btn-danger'><i class="fa-solid fa-delete-left"></i> Delete</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table> */}
 
         </div>
       </div>
