@@ -8,8 +8,7 @@ const URI = 'http://localhost:8000/casos/';
 const ComponenteShowPrueba = () => {
 
   const [registros, setRegistros] = useState([]);
-  const [registrosTransformados, setRegistrosTransformados] = useState([]);
-
+  
   useEffect(() => {
     getBlogs();
   }, []);
