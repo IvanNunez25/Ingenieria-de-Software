@@ -53,6 +53,12 @@
     border-radius: 15px;
     margin: 5px;
     background-color: #0B2352;
+
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
 .dashboard__window .dashboard__window-mensaje .area_descripcion a button:hover {
@@ -62,9 +68,20 @@
 }
 
 .tabla__registros {
-    padding: 20px;
+    padding: 30px;
 }
 
 .tabla__registros_boton {
     margin-left: 10px;
+}
+
+.tabla__registros_columna {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crear__registro {
+    padding: 30px;
 }

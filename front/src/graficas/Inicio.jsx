@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import React from "react";
 import { Chart } from "react-google-charts";
 import { Link } from "react-router-dom";

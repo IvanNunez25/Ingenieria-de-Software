@@ -10,7 +10,7 @@ const URI = 'http://localhost:8000/casos/';
 const ComponenteShowPrueba = () => {
 
   const [registros, setRegistros] = useState([]);
-  
+
   useEffect(() => {
     getBlogs();
   }, []);
@@ -103,22 +103,25 @@ const ComponenteShowPrueba = () => {
         label: 'Acciones',
         field: 'acciones',
         sort: 'asc',
-        width: 100
+        width: 100,
       }
     ],
     rows: registrosTrans
   }
 
   return (
-    <div className='dashboard tabla__registros'>
+    <div className='dashboard'>
       <div>
         <Menu />
       </div>
-      <div className='row'>
+      <div className='row tabla__registros'>
         <div className='col'>
 
-          <Link to='/create' className='btn btn-primary mt-2 mb-2'><i class="fa-regular fa-square-plus"></i> Agregar nuevo registro</Link>
-
+          <div className=''>
+            <Link to='/create' className='btn btn-primary mt-2 mb-2'>
+              <i class="fa-regular fa-square-plus"></i> Agregar nuevo registro
+            </Link>
+          </div>
           {console.log(data)}
           <MDBDataTable
             striped
