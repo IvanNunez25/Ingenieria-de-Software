@@ -106,3 +106,83 @@ export const deleteCaso = async(req, res) => {
     res.json({ 'mensaje': error.message });
   }
 }
+
+/* obtener hombres por municipio */
+export const getCuentaHombresPorMunicipio = async (req, res) => {
+  try {
+    console.log("-------------------- CONSULTA -------------------");
+    const casos = await casosModelo.findAll({
+      attributes: [
+        [Sequelize.fn('COUNT', Sequelize.col('casos.id')), 'cuenta']
+      ],
+      include: [
+        {
+          model: estadosModelo,
+          attributes: ['nombre_estado'],
+          where: {
+            id: Sequelize.col('casos.entidad'),
+          }         
+        },
+        {
+          model: municipiosModelo,
+          as: 'municipio_association',
+          attributes: ['nombre_mun'],
+          where: {
+            id: Sequelize.col('casos.mun')
+          }
+        }
+      ],
+      where: {
+        sexo: 1,
+      },
+      group: ['nombre_mun', 'nombre_estado'], // Agrupar por municipio y estado
+      order: [[Sequelize.literal('cuenta'), 'DESC']], // Ordenar por cuenta en orden descendente
+      limit: 10
+    });
+
+    res.json(casos);
+
+  } catch (error) {
+    res.json({ mensaje: error.message });
+  }
+};
+
+/* obtener mujeres por municipio */
+export const getCuentaMujeresPorMunicipio = async (req, res) => {
+  try {
+    console.log("-------------------- CONSULTA -------------------");
+    const casos = await casosModelo.findAll({
+      attributes: [
+        [Sequelize.fn('COUNT', Sequelize.col('casos.id')), 'cuenta']
+      ],
+      include: [
+        {
+          model: estadosModelo,
+          attributes: ['nombre_estado'],
+          where: {
+            id: Sequelize.col('casos.entidad'),
+          }         
+        },
+        {
+          model: municipiosModelo,
+          as: 'municipio_association',
+          attributes: ['nombre_mun'],
+          where: {
+            id: Sequelize.col('casos.mun')
+          }
+        }
+      ],
+      where: {
+        sexo: 2,
+      },
+      group: ['nombre_mun', 'nombre_estado'], // Agrupar por municipio y estado
+      order: [[Sequelize.literal('cuenta'), 'DESC']], // Ordenar por cuenta en orden descendente
+      limit: 10
+    });
+
+    res.json(casos);
+
+  } catch (error) {
+    res.json({ mensaje: error.message });
+  }
+};

@@ -1,31 +1,20 @@
 .dashboard {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 200px auto;
     background-color: #f7f7f7;
-    height: 100vh;
+    min-height: 150vh;
 }
 
 .dashboard__menu {
-    width: 200px;
-    height: 100px;
-    background-color: aquamarine;
+    min-height: 150vh;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
-@media (max-width: 768px) {
-    .dashboard__menu {
-        width: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    .dashboard {
-        flex-direction: column;
-    }
-
-    .dashboard__menu {
-        height: 50px;
-        width: 100vw;
-    }
+.dashboard__window {
+    grid-column: 2 / 3;
+    padding-left: 30px;
+    padding-top: 50px;
 }
 
 .dashboard__window .dashboard__window-titulo {
@@ -34,14 +23,10 @@
     text-align: left;
 }
 
-/* .dashboard__window .dashboard__window-titulo h1 {
-    
-} */
-
-@media (max-width: 480px) {
-    .dashboard__window .dashboard__window-titulo h1 {
-        text-align: center;
-    }
+.dashboard__window .dashboard__window-titulo h1 {
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 800;
 }
 
 .dashboard__window .dashboard__window-mensaje {
@@ -51,9 +36,52 @@
 .dashboard__window .dashboard__window-mensaje .titulo {
     font-size: 26px;
     font-weight: 500;
+    margin-bottom: 0px;
 }
 
-.dashboard__window .dashboard__window-mensaje .descripcion {
+.dashboard__window .dashboard__window-mensaje .area_descripcion {
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard__window .dashboard__window-mensaje .area_descripcion .descripcion {
     font-size: 22px;
     font-weight: 300;
+}
+
+.dashboard__window .dashboard__window-mensaje .area_descripcion a button {
+    border-radius: 15px;
+    margin: 5px;
+    background-color: #0B2352;
+
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.dashboard__window .dashboard__window-mensaje .area_descripcion a button:hover {
+    background-color: #A7C9D3;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+.tabla__registros {
+    padding: 30px;
+}
+
+.tabla__registros_boton {
+    margin-left: 10px;
+}
+
+.tabla__registros_columna {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crear__registro {
+    padding: 30px;
 }

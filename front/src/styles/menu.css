@@ -1,6 +1,51 @@
 .menu {
     background-color: #0B2352;
     color: #fff;
-    /* height: 100%;
-    width: 100%; */
+    min-height: 150vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.menu .menu__titulo {
+    font-size: 24px;
+    margin: 50px auto;
+}
+
+.menu .menu__opciones {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* La etiqueta <Link /> en CSS pasa a la etiqueta <a /> */
+.menu .menu__opciones a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu .menu__opciones .menu__opciones-opcion {
+    /* margin: 30px 0 10px 20px; */
+    height: 50px;
+    padding-left: 20px;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    text-align: left;
+    font-size: 18px;
+}
+
+.menu .menu__opciones .menu__opciones-opcion:hover {
+    background-color: #A7C9D3;
+    color: black;
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+}
+
+.menu .menu__opciones .menu__opciones-opcion i {
+    margin-right: 10px;
 }
