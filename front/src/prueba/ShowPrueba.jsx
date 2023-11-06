@@ -47,7 +47,7 @@ const ComponenteShowPrueba = () => {
           <Link to={`/edit/${reg.prueba_id}`} className='btn btn-info'>
             <i className="fa-regular fa-pen-to-square"></i> Editar
           </Link>
-          <button onClick={() => deleteBlog(reg.prueba_id)} className='btn btn-danger tabla__registros_boton'>
+          <button onClick={() => deleteBlog(reg.id)} className='btn btn-danger tabla__registros_boton'>
             <i className="fa-solid fa-delete-left"></i> Delete
           </button>
         </div>
